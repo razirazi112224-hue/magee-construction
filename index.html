@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Magee Construction | Home Remodeling & Building Services</title>
+  <meta name="description" content="Magee Construction provides expert home remodeling, additions, roofing, exterior improvements, and custom building services. Quality craftsmanship since decades.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --mc-dark: #1E2A32;
+      --mc-gold: #C9A87C;
+      --mc-sand: #F5F0E8;
+      --mc-white: #FFFFFF;
+      --mc-gray-100: #F8F9FA;
+      --mc-gray-200: #E9ECEF;
+      --mc-gray-700: #495057;
+      --shadow-sm: 0 16px 28px -12px rgba(0,0,0,0.08);
+      --shadow-hover: 0 30px 45px -18px rgba(0,0,0,0.15);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--mc-sand);
+      color: var(--mc-dark);
+      line-height: 1.55;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5.2vw, 4.2rem);
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3.8vw, 2.9rem);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header */
+    .site-header {
+      background: var(--mc-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 3px solid var(--mc-gold);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0.9rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      border: none;
+    }
+    .logo-icon {
+      background: var(--mc-gold);
+      width: 48px;
+      height: 48px;
+      border-radius: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--mc-dark);
+    }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-text span {
+      color: var(--mc-gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      color: var(--mc-gold);
+      border-bottom-color: var(--mc-gold);
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(112deg, var(--mc-dark) 0%, #2C3D48 100%);
+      color: white;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      right: -5%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(201,168,124,0.2), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,124,0.2);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(201,168,124,0.4);
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--mc-gold);
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      max-width: 620px;
+      opacity: 0.9;
+      margin: 1.3rem 0 2rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat .stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--mc-gold);
+    }
+    .btn-primary, .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: 0.25s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--mc-gold);
+      color: var(--mc-dark);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover {
+      background: #e0c099;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.5);
+      color: white;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+
+    /* sections */
+    .section {
+      padding: 5rem 0;
+    }
+    .section-white {
+      background: var(--mc-white);
+    }
+    .section-light {
+      background: var(--mc-gray-100);
+    }
+    .eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--mc-gold);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    .lead-text {
+      font-size: 1.2rem;
+      color: var(--mc-gray-700);
+      margin: 1rem 0 1.2rem;
+    }
+    .inline-link {
+      font-weight: 700;
+      color: var(--mc-dark);
+      border-bottom: 2px solid var(--mc-gold);
+      transition: 0.2s;
+    }
+    .inline-link:hover {
+      color: var(--mc-gold);
+      border-bottom-color: var(--mc-dark);
+    }
+
+    /* card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      transition: 0.3s;
+      border: 1px solid var(--mc-gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--mc-gold);
+      box-shadow: var(--shadow-hover);
+    }
+    .card-icon {
+      font-size: 2.2rem;
+      color: var(--mc-gold);
+      margin-bottom: 1rem;
+    }
+
+    /* table */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 24px;
+      background: white;
+      box-shadow: var(--shadow-sm);
+      margin: 2rem 0;
+    }
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .services-table th {
+      background: var(--mc-dark);
+      color: white;
+      padding: 1rem 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: left;
+    }
+    .services-table td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--mc-gray-200);
+      color: var(--mc-dark);
+      font-weight: 500;
+    }
+    .services-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* process steps */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .process-step {
+      background: white;
+      border-radius: 60px;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      font-weight: 600;
+      border: 1px solid var(--mc-gray-200);
+      transition: 0.2s;
+    }
+    .process-step:hover {
+      border-color: var(--mc-gold);
+      background: var(--mc-sand);
+    }
+
+    /* cta */
+    .cta-magee {
+      background: linear-gradient(105deg, var(--mc-dark) 0%, #2C3D48 100%);
+      text-align: center;
+      padding: 4rem 2rem;
+      color: white;
+    }
+    .cta-magee h2 {
+      color: white;
+    }
+    .cta-magee .btn-primary {
+      margin-top: 1.2rem;
+    }
+
+    /* footer */
+    footer {
+      background: #0F1A22;
+      color: #9EACB5;
+      padding: 3rem 2rem 1.5rem;
+      border-top: 5px solid var(--mc-gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    @media (max-width: 780px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.8rem;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .footer-col a {
+      color: #9EACB5;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      transition: 0.2s;
+      border: none;
+    }
+    .footer-col a:hover {
+      color: var(--mc-gold);
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      background: rgba(255,255,255,0.08);
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      transition: 0.2s;
+      color: white;
+    }
+    .social-links a:hover {
+      background: var(--mc-gold);
+      color: var(--mc-dark);
+      transform: translateY(-2px);
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+    }
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"><i class="fas fa-hard-hat"></i></div>
+      <div class="logo-text">Magee<span>Construction</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge"><i class="fas fa-hard-hat"></i> FAMILY-OWNED · QUALITY CRAFTSMANSHIP</div>
+      <h1>Magee Construction Services, <em>Remodeling & Home Building Guide</em></h1>
+      <p class="hero-desc">Decades of experience in residential & commercial construction. From kitchen remodels to full home builds – expert craftsmanship you can trust.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#services" class="btn-primary"><i class="fas fa-tools"></i> Explore Services</a>
+        <a href="https://mageeconstruction.com/" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-hard-hat"></i> magee construction</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-value">Decades of exp.</div><div>Trusted builder</div></div>
+        <div class="stat"><div class="stat-value">Full-service</div><div>Remodeling & new builds</div></div>
+        <div class="stat"><div class="stat-value">Quality</div><div>Certified craftsmanship</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO + FIRST LINK (anchor "magee construction" in the middle) -->
+  <section class="section section-white" id="overview">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-info-circle"></i> WHO WE ARE</span>
+      <h2>Your trusted partner for <em>home building and remodeling</em></h2>
+      <p class="lead-text">Magee Construction is a full-service construction and remodeling company dedicated to delivering high-quality residential and commercial projects. <strong>Learn more about our work:</strong> <a href="https://mageeconstruction.com/" target="_blank" rel="noopener" class="inline-link">magee construction</a> – where craftsmanship meets reliability.</p>
+      <p>From kitchen renovations to complete home additions, we manage every project with precision, transparency, and a commitment to excellence. Our team handles everything from initial design to final inspection, ensuring a stress-free experience for homeowners and business owners alike.</p>
+    </div>
+  </section>
+
+  <!-- Services cards -->
+  <section class="section section-light" id="services">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-cogs"></i> CORE SERVICES</span>
+      <h2>What we offer – complete construction solutions</h2>
+      <div class="card-grid">
+        <div class="service-card"><div class="card-icon"><i class="fas fa-home"></i></div><h3>Home Remodeling</h3><p>Kitchen, bathroom, basement finishing & complete interior upgrades.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-expand-alt"></i></div><h3>Home Additions</h3><p>Room expansions, sunrooms, garages, and structural extensions.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-roof"></i></div><h3>Roofing Services</h3><p>Installation, repair, replacement, and maintenance.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-drafting-compass"></i></div><h3>Exterior Improvements</h3><p>Siding, windows, doors – curb appeal & energy efficiency.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-fire-extinguisher"></i></div><h3>Insurance Restoration</h3><p>Fire, water, storm damage repair and restoration.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-hard-hat"></i></div><h3>Custom Construction</h3><p>Tailor-made building projects based on your vision.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services comparison table -->
+  <section class="section section-white">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-table-list"></i> SERVICES OVERVIEW</span>
+      <h2>Construction & remodeling solutions at a glance</h2>
+      <div class="table-wrapper">
+        <table class="services-table">
+          <thead>
+            <tr><th>Service Type</th><th>Purpose</th><th>Benefits</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="can">Home Remodeling</th>
+              <td>Improve interior spaces</th>
+              <td>Better comfort, modern look, increased value</th>
+              </tr>
+            <tr class="can"><td class="can">Home Additions</th><td>Expand living space</th><td>More room, higher property value</th></tr>
+            <tr class="can"><td class="can">Roofing Services</th><td>Repair or replace roofs</th><td>Safety, weather protection, durability</th></tr>
+            <tr class="can"><td class="can">Exterior Improvements</th><td>Upgrade outside structure</th><td>Curb appeal, energy efficiency</th></tr>
+            <tr class="can"><td class="can">Insurance Restoration</th><td>Repair damaged property</th><td>Quick recovery after disasters</th></tr>
+            <tr class="can"><td class="can">Custom Construction</th><td>Build unique structures</th><td>Personalized design, full control</th></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project workflow + process -->
+  <section class="section section-light" id="process">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-chart-line"></i> OUR PROCESS</span>
+      <h2>How we bring your vision to life</h2>
+      <div class="process-grid">
+        <div class="process-step">1. Consultation & Ideas</div>
+        <div class="process-step">2. Design & Planning</div>
+        <div class="process-step">3. Budget & Timeline</div>
+        <div class="process-step">4. Construction & Oversight</div>
+        <div class="process-step">5. Quality Inspections</div>
+        <div class="process-step">6. Final Walkthrough</div>
+      </div>
+      <p class="lead-text">We follow a structured workflow to ensure projects stay on time, within budget, and exceed expectations. Regular updates and transparent communication keep you informed every step of the way.</p>
+    </div>
+  </section>
+
+  <!-- Why choose Magee Construction -->
+  <section class="section section-white">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-star"></i> WHY CHOOSE US</span>
+      <h2>Built on trust, quality & decades of experience</h2>
+      <div class="card-grid">
+        <div class="service-card"><div class="card-icon"><i class="fas fa-handshake"></i></div><h3>Reliable Craftsmanship</h3><p>Skilled professionals with attention to every detail.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-clock"></i></div><h3>On-Time Delivery</h3><p>Projects completed within agreed timelines.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>Stress-Free Process</h3><p>Full project management from start to finish.</p></div>
+        <div class="service-card"><div class="card-icon"><i class="fas fa-gem"></i></div><h3>Modern Techniques</h3><p>Updated tools, materials, and energy-efficient designs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer experience & satisfaction -->
+  <section class="section section-light">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-smile"></i> CLIENT EXPERIENCE</span>
+      <h2>Satisfaction-driven approach</h2>
+      <p class="lead-text">We believe that successful projects are built on communication and trust. From the first consultation to post-project support, we keep clients involved and informed. Our goal is to create spaces that not only look beautiful but also function perfectly for your lifestyle.</p>
+      <p>After project completion, we remain available for maintenance and adjustments, ensuring long-term satisfaction. Positive feedback from homeowners and business owners reflects our dedication to quality work and professional behavior.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-magee">
+    <div class="container">
+      <h2>Ready to transform your <em>home or business?</em></h2>
+      <p style="max-width: 580px; margin: 0 auto; opacity: 0.9;">Let’s discuss your next project – from remodeling to custom builds.</p>
+      <a href="https://mageeconstruction.com/" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-hard-hat"></i> Contact Magee Construction</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><i class="fas fa-hard-hat"></i> Magee<span>Construction</span></div>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem;">Quality construction & remodeling services. Decades of experience, modern craftsmanship, and complete project management.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Houzz"><i class="fab fa-houzz"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Home Remodeling</a>
+      <a href="#">Home Additions</a>
+      <a href="#">Roofing</a>
+      <a href="#">Exterior Improvements</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Testimonials</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Imprint</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 Magee Construction – Expert home building, remodeling & restoration. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
